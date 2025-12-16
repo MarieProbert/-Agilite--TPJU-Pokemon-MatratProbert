@@ -31,7 +31,7 @@ import org.junit.jupiter.api.Test;
  */
 public class PokeballTest
 {
-    private Pokemon Funecire;
+    private Pokemon funecire;
     private Pokeball superBall;
 
     // Définissez ici les variables d'instance nécessaires à vos engagements;
@@ -57,9 +57,9 @@ public class PokeballTest
     @BeforeEach
     public void setUp() // throws java.lang.Exception
     {
-        Funecire = new Pokemon("Feu", "Spectre");
-        superBall = new Pokeball(600, Funecire);
-        Funecire.setPokeball(superBall);
+        funecire = new Pokemon("Feu", "Spectre");
+        superBall = new Pokeball(600, funecire);
+        funecire.setPokeball(superBall);
     }
 
 
