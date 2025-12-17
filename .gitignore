@@ -4,4 +4,6 @@
 
 *.github
 
+*__pycache__
+
 .bluej/
