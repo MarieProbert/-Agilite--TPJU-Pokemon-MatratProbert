@@ -1,6 +1,6 @@
 import unittest
-from pokemon import Pokemon
-from pokeball import Pokeball
+from Class.pokemon import Pokemon
+from Class.pokeball import Pokeball
 
 class TestPokemon(unittest.TestCase):
     """Traduction de PokemonTest.java"""
