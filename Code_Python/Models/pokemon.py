@@ -16,8 +16,6 @@ class Pokemon:
     def set_type2(self, new_type):
         self.type2 = new_type
 
-    def set_pokeball(self, pokeball):
-        self.pokeball = pokeball
-
     def get_pokeball(self):
         return self.pokeball
+    

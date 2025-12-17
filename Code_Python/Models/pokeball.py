@@ -2,7 +2,8 @@ class Pokeball:
     def __init__(self, prix, pokemon=None):
         self.prix = prix
         self.pokemon = pokemon
-
+        if pokemon is not None:
+                    pokemon.pokeball = self
     def afficher_type_pokemon(self):
         if self.pokemon is None:
             return "Cette Pokeball est vide. Aucun type à afficher."
@@ -16,3 +17,11 @@ class Pokeball:
             return f"De type {t1}."
         else:
             return "Le Pokémon dans cette Pokeball n'a pas de type défini."
+        
+    def capturer_pokemon(self, pokemon):
+        if self.pokemon is not None:
+            raise Exception("La Pokeball contient déjà un Pokémon.")
+        if pokemon.pokeball is not None:
+            raise Exception("Le Pokémon est déjà dans une Pokeball.")
+        self.pokemon = pokemon
+        pokemon.pokeball = self
