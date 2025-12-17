@@ -1,6 +1,11 @@
+import os
+import sys
 import unittest
-from Class.pokemon import Pokemon
-from Class.pokeball import Pokeball
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
+
+from Models.pokemon import Pokemon
+from Models.pokeball import Pokeball
 
 class TestPokemon(unittest.TestCase):
     """Traduction de PokemonTest.java"""

@@ -1,5 +1,5 @@
-from pokemon import Pokemon
-from pokeball import Pokeball
+from Models.pokemon import Pokemon
+from Models.pokeball import Pokeball
 
 # Création des instances
 funecire = Pokemon("Feu", "Spectre")
