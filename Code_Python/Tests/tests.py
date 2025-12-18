@@ -33,20 +33,33 @@ class TestPokemon(unittest.TestCase):
         dracaufeu.set_type2("Vol")
         self.assertEqual("Vol", dracaufeu.get_type2())
 
+    def test_get_pokeball(self):
+        funecire = Pokemon("Feu", "Spectre")
+        super_ball = Pokeball(600)
+        super_ball.capturer_pokemon(funecire)
+        self.assertEqual(super_ball, funecire.get_pokeball())
+
 
 class TestPokeball(unittest.TestCase):
     """Traduction de PokeballTest.java"""
 
     def setUp(self):
-        # Configuration de la relation bidirectionnelle
+        # Équivalent des engagements (@BeforeEach)
         self.funecire = Pokemon("Feu", "Spectre")
-        self.super_ball = Pokeball(600, self.funecire)
-        self.funecire.set_pokeball(self.super_ball)
+        self.super_ball = Pokeball(600)
+        self.super_ball.capturer_pokemon(self.funecire)
 
     def test_afficher_pokeball(self):
         # Vérifie le message renvoyé par la pokéball
         attendu = "De types Feu et Spectre."
         self.assertEqual(attendu, self.super_ball.afficher_type_pokemon())
+
+    def test_capturer_pokemon(self):
+        pikachu = Pokemon("Electrik", "Normal")
+        pokeball = Pokeball(300)
+        pokeball.capturer_pokemon(pikachu)
+        self.assertEqual(pikachu, pokeball.pokemon)
+        self.assertEqual(pokeball, pikachu.pokeball)
 
 if __name__ == '__main__':
     unittest.main()
