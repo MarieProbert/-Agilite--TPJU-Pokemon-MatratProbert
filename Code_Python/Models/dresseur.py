@@ -5,8 +5,8 @@ class Dresseur:
 
     def get_nom(self):
         return self.nom
-    
-    def get_pokeballs(self):
+
+    def get_inventaire(self):
         return self.inventaire
 
     def ajouter_pokeball(self, pokeball):
@@ -21,7 +21,10 @@ class Dresseur:
     def liberer_pokemon(self, pokeball):
         if pokeball.pokemon is not None:
             print(f"{self.nom} a libéré {pokeball.pokemon.nom} de la Pokéball.")
-            pokeball.pokemon.pokeball = None
-            pokeball.pokemon = None
+            self.nettoyer_lien_pokemon_pokeball(pokeball)
         else:
             print("La Pokéball est déjà vide.")
+
+    def nettoyer_lien_pokemon_pokeball(self, pokeball):
+        pokeball.pokemon.pokeball = None
+        pokeball.pokemon = None
