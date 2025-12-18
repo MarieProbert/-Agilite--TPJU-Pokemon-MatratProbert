@@ -73,7 +73,7 @@ class TestDresseur(unittest.TestCase):
         self.assertEqual(self.dresseur.nom, "Régis")
 
     def test_get_nom(self):
-        self.assertEqual(self.dresseur.get_nom(), "Sacha")
+        self.assertEqual("self.dresseur.get_nom()", "Sacha")
 
     def test_get_inventaire(self):
         self.dresseur.ajouter_pokeball(self.pokeball)
@@ -92,7 +92,6 @@ class TestDresseur(unittest.TestCase):
         self.assertEqual(len(self.dresseur.inventaire), 1)
 
     def test_capturer_pokemon_succes(self):
-        print("--- Test de capture de Pokémon ---")
         self.dresseur.capturer_pokemon(self.pokemon, self.pokeball)
         self.assertEqual(self.pokeball.pokemon, self.pokemon)
         self.assertEqual(self.pokemon.pokeball, self.pokeball)
