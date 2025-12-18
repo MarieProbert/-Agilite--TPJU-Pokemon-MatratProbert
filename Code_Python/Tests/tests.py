@@ -72,6 +72,20 @@ class TestDresseur(unittest.TestCase):
         self.dresseur.nom = "Régis"
         self.assertEqual(self.dresseur.nom, "Régis")
 
+    def test_get_nom(self):
+        self.assertEqual(self.dresseur.get_nom(), "Sacha")
+
+    def test_get_inventaire(self):
+        self.dresseur.ajouter_pokeball(self.pokeball)
+        self.assertIn(self.pokeball, self.dresseur.get_inventaire())
+        self.assertEqual(len(self.dresseur.get_inventaire()), 1)
+
+    def test_nettoyer_lien_pokemon_pokeball(self):
+        self.dresseur.capturer_pokemon(self.pokemon, self.pokeball)
+        self.dresseur.nettoyer_lien_pokemon_pokeball(self.pokeball)
+        self.assertIsNone(self.pokeball.pokemon)
+        self.assertIsNone(self.pokemon.pokeball)
+
     def test_ajouter_pokeball(self):
         self.dresseur.ajouter_pokeball(self.pokeball)
         self.assertIn(self.pokeball, self.dresseur.inventaire)
