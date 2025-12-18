@@ -1,8 +1,8 @@
-Feature: Displaying a Pokémon's type via its Pokéball
+Feature: Afficher le type d'un Pokémon dans une Pokéball
 
   En tant que dresseur Pokemon
   Je veux savoir les types d'un Pokémon via sa Pokéball
-  Pour que je puisse savoir des informations sur le Pokémon contenu
+  Pour avoir des informations sur le Pokémon contenu
 
   Scenario: Afficher les types d'un Pokémon dans une Pokéball
     Given un Pokemon de types "Feu" et "Spectre"

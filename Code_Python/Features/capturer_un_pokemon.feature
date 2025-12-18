@@ -1,4 +1,3 @@
-# language: en
 Feature: Mettre un Pokémon dans une Pokéball
 
   En tant que dresseur Pokemon
