@@ -1,16 +1,16 @@
 class Dresseur:
     def __init__(self, nom):
         self.nom = nom
-        self.pokeballs = []
+        self.inventaire = []
 
     def get_nom(self):
         return self.nom
     
     def get_pokeballs(self):
-        return self.pokeballs
+        return self.inventaire
 
     def ajouter_pokeball(self, pokeball):
-        self.pokeballs.append(pokeball)
+        self.inventaire.append(pokeball)
 
     def capturer_pokemon(self, pokemon, pokeball):
         if pokeball.capturer_pokemon(pokemon):

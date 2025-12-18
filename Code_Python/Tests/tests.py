@@ -74,8 +74,8 @@ class TestDresseur(unittest.TestCase):
 
     def test_ajouter_pokeball(self):
         self.dresseur.ajouter_pokeball(self.pokeball)
-        self.assertIn(self.pokeball, self.dresseur.pokeballs)
-        self.assertEqual(len(self.dresseur.pokeballs), 1)
+        self.assertIn(self.pokeball, self.dresseur.inventaire)
+        self.assertEqual(len(self.dresseur.inventaire), 1)
 
     def test_capturer_pokemon_succes(self):
         print("--- Test de capture de Pokémon ---")
