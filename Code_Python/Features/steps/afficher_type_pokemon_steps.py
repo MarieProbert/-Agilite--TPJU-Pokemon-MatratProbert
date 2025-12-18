@@ -5,7 +5,7 @@ from Models.pokeball import Pokeball
 
 @given('un Pokemon de types {type1} et {type2}')
 def step_given_pokemon_types(context, type1, type2):
-    context.pokemon = Pokemon(type1, type2)
+    context.pokemon = Pokemon("TestPokemon", type1, type2)
 
 @given('une Pokéball contenant ce Pokémon')
 def step_given_pokeball_with_pokemon(context):

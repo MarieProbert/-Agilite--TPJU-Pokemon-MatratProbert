@@ -1,8 +1,11 @@
 class Pokemon:
-    def __init__(self, type1, type2, pokeball=None):
+    def __init__(self, nom, type1, type2, pokeball=None):
         self.type1 = type1
         self.type2 = type2
         self.pokeball = pokeball
+        self.nom = nom
+        if pokeball is not None:
+            self.pokeball.pokemon = self
 
     def get_type1(self):
         return self.type1

@@ -2,7 +2,7 @@ from Models.pokemon import Pokemon
 from Models.pokeball import Pokeball
 
 # Création des instances
-funecire = Pokemon("Feu", "Spectre")
+funecire = Pokemon("Funecire", "Feu", "Spectre")
 super_ball = Pokeball(600, funecire)
 
 # On relie le pokemon à sa pokéball (relation bidirectionnelle)

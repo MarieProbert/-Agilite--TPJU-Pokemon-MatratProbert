@@ -4,7 +4,7 @@ from Models.pokeball import Pokeball
 
 @given('un Pokémon sauvage')
 def step_given_pokemon_sauvage(context):
-    context.pokemon = Pokemon("Feu", "Spectre")
+    context.pokemon = Pokemon("TestPokemon", "Feu", "Spectre")
 
 @given('une Pokéball vide')
 def step_given_pokeball_vide(context):
