@@ -1,6 +1,4 @@
 from behave import given, when, then
-import sys
-import os
 from Models.pokemon import Pokemon
 from Models.pokeball import Pokeball
 

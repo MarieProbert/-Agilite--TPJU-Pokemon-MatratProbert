@@ -1,13 +1,11 @@
 from behave import given, when, then
-import sys
-import os
 from Models.pokemon import Pokemon
 from Models.pokeball import Pokeball
 
 
-@given('un Pokemon de types "Feu" et "Spectre"')
-def step_given_pokemon_types(context):
-    context.pokemon = Pokemon("Feu", "Spectre")
+@given('un Pokemon de types {type1} et {type2}')
+def step_given_pokemon_types(context, type1, type2):
+    context.pokemon = Pokemon(type1, type2)
 
 @given('une Pokéball contenant ce Pokémon')
 def step_given_pokeball_with_pokemon(context):
@@ -18,9 +16,10 @@ def step_given_pokeball_with_pokemon(context):
 def step_when_afficher_type(context):
     context.result = context.pokeball.afficher_type_pokemon()
 
-@then('afficher le message "De types Feu et Spectre."')
-def step_then_afficher_types(context):
-    assert context.result == "De types Feu et Spectre."
+@then('afficher le message "De types {type1} et {type2}."')
+def step_then_afficher_types(context, type1, type2):
+    expected = f"De types {type1} et {type2}."
+    assert context.result == expected
 
 @given('une Pokéball sans Pokémon')
 def step_given_empty_pokeball(context):
